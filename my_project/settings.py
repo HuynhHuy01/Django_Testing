@@ -15,6 +15,10 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -83,7 +87,7 @@ WSGI_APPLICATION = 'my_project.wsgi.application'
 import dj_database_url 
 
 DATABASES = {
-    'default' : dj_database_url.parse('postgres://django_tesing_user:gq88Lk6fqdbYaqZEOnApFfH8ZrPU9qsn@dpg-clo7dfv5felc73a3gfvg-a.ohio-postgres.render.com/django_tesing')
+    'default' : dj_database_url.parse(env('DATABASE_URL'))
 }
 
 # DATABASES = {
