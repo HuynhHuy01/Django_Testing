@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'my_project.wsgi.application'
 import dj_database_url 
 
 DATABASES = {
-    'default' : dj_database_url.parse(env('DATABASE_URL'))
+    'default' : dj_database_url.parse('postgres://django_tesing_user:gq88Lk6fqdbYaqZEOnApFfH8ZrPU9qsn@dpg-clo7dfv5felc73a3gfvg-a.ohio-postgres.render.com/django_tesing')
 }
 
 # DATABASES = {
